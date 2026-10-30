@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cash Flow | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2 class="brand">SmartCash<span>Flow</span></h2>
+
+        <nav>
+            <a href="#dashboard" class="active">Dashboard</a>
+            <a href="#invoices">Invoices</a>
+            <a href="#payments">Payments</a>
+            <a href="#transactions">Clearing Transactions</a>
+            <a href="#exceptions">Exceptions</a>
+        </nav>
+
+        <div class="sidebar-footer">Invoice Clearing Engine</div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">FINANCIAL MANAGEMENT</p>
+                <h1>Cash Flow Dashboard</h1>
+<p class="subtitle">
+    Monitor invoices, payments and clearing activity.
+</p>
+
+<button id="run-clearing-btn" class="run-button">
+    Run Clearing
+</button>
+
+<p id="clearing-message" role="status"></p>
+            </div>
+            <span class="status-badge">Demo Preview</span>
+        </header>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <p>Total Invoice Value</p>
+                <h2>₹37,000</h2>
+                <span>6 invoices</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Total Payments</p>
+                <h2>₹26,000</h2>
+                <span>4 payments</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Total Allocated</p>
+                <h2>₹26,000</h2>
+                <span>Recorded paid amount</span>
+            </article>
+
+            <article class="summary-card">
+                <p>Overdue Invoices</p>
+                <h2>2</h2>
+                <span>Require attention</span>
+            </article>
+        </section>
+
+        <section class="panel" id="invoices">
+            <div class="panel-heading">
+                <div>
+                    <h2>Invoice Overview</h2>
+                    <p>Current invoice status</p>
+                </div>
+                <span class="count">6 records</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Paid</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>INV001</td>
+                            <td>ABC Technologies</td>
+                            <td>₹5,000</td>
+                            <td>₹5,000</td>
+                            <td><span class="pill paid">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV002</td>
+                            <td>ABC Technologies</td>
+                            <td>₹3,000</td>
+                            <td>₹3,000</td>
+                            <td><span class="pill paid">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV003</td>
+                            <td>ABC Technologies</td>
+                            <td>₹7,000</td>
+                            <td>₹3,000</td>
+                            <td><span class="pill partial">Partially Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV004</td>
+                            <td>XYZ Solutions</td>
+                            <td>₹10,000</td>
+                            <td>₹10,000</td>
+                            <td><span class="pill paid">Paid</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV005</td>
+                            <td>XYZ Solutions</td>
+                            <td>₹4,000</td>
+                            <td>₹0</td>
+                            <td><span class="pill overdue">Overdue</span></td>
+                        </tr>
+                        <tr>
+                            <td>INV006</td>
+                            <td>Global Systems</td>
+                            <td>₹8,000</td>
+                            <td>₹5,000</td>
+                            <td><span class="pill overdue">Overdue</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="two-column">
+            <article class="panel" id="payments">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Recent Payments</h2>
+                        <p>Payment processing status</p>
+                    </div>
+                </div>
+
+                <div class="payment-row">
+                    <div>
+                        <strong>PAY001</strong>
+                        <p>ABC Technologies</p>
+                    </div>
+                    <div class="payment-right">
+                        <strong>₹5,000</strong>
+                        <span class="pill paid">Allocated</span>
+                    </div>
+                </div>
+
+                <div class="payment-row">
+                    <div>
+                        <strong>PAY002</strong>
+                        <p>ABC Technologies</p>
+                    </div>
+                    <div class="payment-right">
+                        <strong>₹6,000</strong>
+                        <span class="pill partial">Partial</span>
+                    </div>
+                </div>
+
+                <div class="payment-row">
+                    <div>
+                        <strong>PAY003</strong>
+                        <p>XYZ Solutions</p>
+                    </div>
+                    <div class="payment-right">
+                        <strong>₹10,000</strong>
+                        <span class="pill paid">Allocated</span>
+                    </div>
+                </div>
+
+                <div class="payment-row">
+                    <div>
+                        <strong>PAY004</strong>
+                        <p>Global Systems</p>
+                    </div>
+                    <div class="payment-right">
+                        <strong>₹5,000</strong>
+                        <span class="pill partial">Partial</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="panel" id="transactions">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Clearing Activity</h2>
+                        <p>Sample transaction records</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                        <strong>PAY001 → INV001</strong>
+                        <p>Payment allocation · ₹5,000</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                        <strong>PAY002 → INV002</strong>
+                        <p>Payment allocation · ₹3,000</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                        <strong>PAY002 → INV003</strong>
+                        <p>Payment allocation · ₹3,000</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                        <strong>PAY003 → INV004</strong>
+                        <p>Payment allocation · ₹10,000</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-dot"></span>
+                    <div>
+                        <strong>PAY004 → INV006</strong>
+                        <p>Payment allocation · ₹5,000</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="panel" id="exceptions">
+            <div class="panel-heading">
+                <div>
+                    <h2>Exceptions</h2>
+                    <p>Payments needing review</p>
+                </div>
+            </div>
+
+            <p class="empty-message">
+                Exception records will appear here when connected to the
+                Java backend and MySQL database.
+            </p>
+        </section>
+
+        <footer>
+            Smart Cash Flow & Invoice Clearing Engine
+            <span>Frontend preview · HTML, CSS and JavaScript</span>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

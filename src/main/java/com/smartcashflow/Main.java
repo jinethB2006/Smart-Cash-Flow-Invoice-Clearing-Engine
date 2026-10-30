@@ -1,26 +1,13 @@
+
 package com.smartcashflow;
 
-import com.mysql.cj.jdbc.AbandonedConnectionCleanupThread;
-import com.smartcashflow.service.ClearingReportService;
+import com.smartcashflow.api.DashboardApi;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        try {
-
-            ClearingReportService reportService =
-                    new ClearingReportService();
-
-            reportService.generateReport();
-
-        } finally {
-
-            try {
-                AbandonedConnectionCleanupThread.checkedShutdown();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        DashboardApi api = new DashboardApi();
+        api.start();
     }
 }
